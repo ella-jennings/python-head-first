@@ -9,7 +9,7 @@ while price > 4.74:
     where = (text.find(">$"))
     start = where+2
     end = start+4
-    price = text[start:end]
+    price = float(text[start:end])
 
 output = 'Current cost of coffee is £' + str(price) + ' - you should buy it now!'
 print (output)
