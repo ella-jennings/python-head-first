@@ -6,8 +6,7 @@ for line in result_f:
     scores.append(float(score))
 result_f.close()
 
-scores.sort()
-scores.reverse()
+scores.sort(reverse = True)
 
 print("The top scores were:")
 print(scores[0])
