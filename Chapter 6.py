@@ -1,8 +1,7 @@
-# a will append (add) records to the end of the file
-def save_transaction(price, credit_card, description):
-    file = open("transactions.txt", "a")
-    file.write("%s%07d%s\n"  % (credit_card, price*100, description))
-    file.close()
+# saved other code as a separate module (transactions.py) to import
+
+from transactions import *
+from promotion import *
 
 items = ["DONUT", "LATTE", "FILTER", "MUFFIN"]
 prices = [1.5, 2.0, 1.80, 1.20]
@@ -19,4 +18,5 @@ while running:
         running = False
     else:
         credit_card = input("Credit card number: ")
-        save_transaction(prices[choice - 1], credit_card, items[choice - 1])
+        new_price = discount(prices[choice - 1])
+        save_transaction(new_price], credit_card, items[choice - 1])
